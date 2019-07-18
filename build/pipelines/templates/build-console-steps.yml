@@ -39,6 +39,5 @@ steps:
     targetType: inline
     script: |
       $Package = Get-ChildItem -Recurse -Filter "CascadiaPackage_*.msix"
-      Write-Host "$Package"
-      $Package | .\build\scripts\Test-WindowsTerminalPackage.ps1 -Verbose
+      .\build\scripts\Test-WindowsTerminalPackage.ps1 -Verbose -Path $Package.FullName
 
